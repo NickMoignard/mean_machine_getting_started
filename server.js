@@ -6,6 +6,12 @@ var path = require('path');
 // get an instance of the express router
 var adminRouter = express.Router();
 
+// Middleware ================================================================
+adminRouter.use(function(req, res, next) {
+	console.log(req.method, req.url);
+	next();
+});
+
 // send our index.html file to the user for the home page
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/index.html'));
