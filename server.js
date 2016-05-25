@@ -25,6 +25,10 @@ adminRouter.get('/', function(req, res) {
 adminRouter.get('/users', function(req, res) {
 	res.send('all the users!')
 });
+adminRouter.get('/users/:name', function(req, res) {
+	res.send("hello " + req.params.name)
+});
+
 // posts page. (http://localhost:1337/admin/posts)
 adminRouter.get('/posts', function(req, res) {
 	res.send('all of the posts')
